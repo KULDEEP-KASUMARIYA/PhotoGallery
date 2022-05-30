@@ -1,0 +1,84 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+
+<body>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content mt-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <!-- left column -->
+          <div class="col-md-6">
+            <!-- jquery validation -->
+            <div class="card card-primary ">
+              <div class="card-header">
+                <h3 class="card-title text-info">Please Login Here !</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form id="quickForm" [formGroup]="loginForm" (ngSubmit)="login_Func()">
+                <div class="card-body">
+                  <!--  Email -->
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="text" formControlName="email" [value]="(isLoggedin?socialUser.email:'')"
+                  [ngClass]="(email && email.invalid && email.touched && email.dirty)?'is-invalid':''" 
+                  [ngClass]="( email && email.valid && email.touched ? 'is-valid':'')"
+                  class="form-control mb-2"  placeholder="Enter email">  
+                    <!-- email error show -->
+                  <small *ngIf="email && email.invalid && email.touched" class="text-danger">Email is required<br></small> 
+                 
+                  
+                   <!--  Password -->
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" formControlName="password" [ngClass]="(password && password.invalid && password.touched && password.dirty)?'is-invalid':'is-valid'" 
+                  [ngClass]="( password && password.valid && password.touched ? 'is-valid':'')"
+                  class="form-control mb-2" id="password" placeholder="Password">
+                  <!-- password error show -->
+                  <small *ngIf="password && password.invalid && password.touched" class="text-danger">Password is required<br></small>
+
+
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+                  <button type="submit" *ngIf="isLoggedin == false" class="btn btn-primary" routerLink="/registration"
+                    style="margin-left: 20px;">Registration</button>
+                  <button type="button" *ngIf="isLoggedin == false" (click)="loginWithFacebook()"
+                    class="btn btn-primary" style="margin-left: 20px;">Signin with Facebook</button>
+                    <button type="button" *ngIf="isLoggedin == false" (click)="loginWithGoogle()"
+                    class="btn btn-primary" style="margin-left: 20px;">Signin with Google</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-6">
+
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+    
+  </div>
+  <!-- /.content-wrapper -->
+
+  
+
+
+
+
+
+</body>
+
+</html>

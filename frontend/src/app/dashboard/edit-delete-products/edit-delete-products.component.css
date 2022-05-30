@@ -1,0 +1,23 @@
+
+body{
+    margin-top: 8%;
+}
+
+.cont{
+    margin-left: 2%;
+    margin-right: auto;
+}
+
+.proImages{
+    width: 50px;
+    height:50px;
+}
+
+  
+  .proImages-img {
+    transition: 0.3s;
+  }
+  
+  .proImages:hover {
+    transform: scale(1.1);
+  }

@@ -1,0 +1,198 @@
+[{
+  "_id": {
+    "$oid": "628245fbc3a83e1c58a23109"
+  },
+  "email": "lalit12345@gmail.com",
+  "password": "123456",
+  "name": "lalit",
+  "lname": "katheriya",
+  "gender": "male",
+  "city": "Bhopal",
+  "dob": {
+    "$date": {
+      "$numberLong": "883612800000"
+    }
+  },
+  "image": "photo-1653640957736.jpg",
+  "__v": 0,
+  "status": 1
+},{
+  "_id": {
+    "$oid": "628251f1fe2a5811b4e2eca1"
+  },
+  "email": "hello@gmail.com",
+  "password": "123456",
+  "name": "hello",
+  "lname": "hello",
+  "gender": "male",
+  "city": "Ratlam",
+  "dob": {
+    "$date": {
+      "$numberLong": "1072915200000"
+    }
+  },
+  "image": "photo-1653641294328.jpg",
+  "__v": 0,
+  "status": 1
+},{
+  "_id": {
+    "$oid": "6288ce390257273d98caebfc"
+  },
+  "email": "vivek@hotmail.com",
+  "password": "$2a$08$Z6CAXn/aWdMNootDZaXbX.bXCjKI/.ibsYYUVLO2NOhRQak83RSU.",
+  "name": "adfaddjf",
+  "lname": "klsdjflsdlfj",
+  "gender": "male",
+  "city": "Bhopal",
+  "dob": {
+    "$date": {
+      "$numberLong": "883612800000"
+    }
+  },
+  "__v": 0,
+  "status": 1,
+  "image": "photo-1653893272868.jpg"
+},{
+  "_id": {
+    "$oid": "6288cf1d03b0243c24da74eb"
+  },
+  "email": "atal@gmail.com",
+  "password": "$2a$08$WNXXAdErHWUjMANHYmxLlOgJHh1SMbF2MJLJ2QJV/hehecWc9O6N2",
+  "name": "Atal",
+  "lname": "JOSHI",
+  "gender": "male",
+  "city": "Ratlam",
+  "dob": {
+    "$date": {
+      "$numberLong": "883612800000"
+    }
+  },
+  "image": "photo-1653640989662.jpg",
+  "__v": 0,
+  "status": 0
+},{
+  "_id": {
+    "$oid": "628cc8aa4a71b53bd4e8f399"
+  },
+  "email": "bhup@gmail.com",
+  "password": "$2a$08$kD6sbfrMdJHZDxswmZU0G.E0J7/ckyMytygO0tcuAg9y3NOmBEt9u",
+  "name": "bhup",
+  "lname": "khumbhkar",
+  "gender": "male",
+  "city": "Indore",
+  "dob": {
+    "$date": {
+      "$numberLong": "883612800000"
+    }
+  },
+  "image": "photo-1653640996045.jpg",
+  "__v": 0,
+  "status": 0
+},{
+  "_id": {
+    "$oid": "628dbe815e3167347cff97a3"
+  },
+  "email": "kuldeep.eway123@gmail.com",
+  "password": "$2a$08$n8ESeE1XbAoIBWomC0gP2u4f9o9UqcgbCHthPLhBQvcwbE5JkRg3m",
+  "name": "KULDEEP",
+  "lname": "KASUMARIYA",
+  "image": "photo-1653641001950.jpg",
+  "provider_id": "113216991163433617483",
+  "provider_name": "GOOGLE",
+  "__v": 0,
+  "status": 1,
+  "city": "Ujjain",
+  "gender": "male",
+  "role": "admin"
+},{
+  "_id": {
+    "$oid": "628dc6490c912a35a805988c"
+  },
+  "email": "atalj@gmail.com",
+  "password": "$2a$08$HIWIcXO.j1vJKVbgxUVY7.oBp01OKPZMswaJ8Fi2f0jra4g43FnGq",
+  "name": "atal",
+  "lname": "joshi",
+  "gender": "female",
+  "city": "Bhopal",
+  "dob": {
+    "$date": {
+      "$numberLong": "883612800000"
+    }
+  },
+  "image": "photo-1653641010488.jpg",
+  "__v": 0,
+  "status": 0
+},{
+  "_id": {
+    "$oid": "62906cfa7329e12c084b3a01"
+  },
+  "status": 0,
+  "email": "ataljoshi@gmail.com",
+  "password": "$2a$08$GRPvfCB84goATAXHPW1Hvey0tUJOZ9TSOcdlM5PxYU7cGWb9lp2BC",
+  "name": "dfdsf",
+  "lname": "dfdsfs",
+  "gender": "male",
+  "city": "Ratlam",
+  "dob": {
+    "$date": {
+      "$numberLong": "883612800000"
+    }
+  },
+  "image": "photo-1653641017129.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "629075bbbdbcb73a3c3729d2"
+  },
+  "status": 0,
+  "email": "sfgdfdsfd@sgsf.dfdd",
+  "password": "$2a$08$bWuGtCiYh.oCg102KFb6muxAv/xygHI/98DTWZ1x7qiPY/bFPuFuG",
+  "name": "Nikita",
+  "lname": "Sharma",
+  "gender": "female",
+  "city": "Indore",
+  "dob": {
+    "$date": {
+      "$numberLong": "883612800000"
+    }
+  },
+  "image": "photo-1653728630899.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6291e5a9f430b51ca0d5ddd5"
+  },
+  "status": 1,
+  "email": "aman@gmail.com",
+  "password": "$2a$08$tdu5sP5vWYKEDtbbO5aJ2eu23WZUayMwgctPpU5cUmosY9.6O8A66",
+  "name": "AMAN",
+  "lname": "KASUMARIY",
+  "gender": "male",
+  "city": "Ratlam",
+  "dob": {
+    "$date": {
+      "$numberLong": "1347408000000"
+    }
+  },
+  "image": "photo-1653893433138.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6294bce6f3f2c4300c15a0f0"
+  },
+  "status": 1,
+  "role": "user",
+  "email": "dfjdlsfjksl@dhfdh.djfdkjf",
+  "password": "$2a$08$jwAsWYVUtxKhnjOaTd6OTuLyvTBw4jPMhWl8mTwr5Xa1TDR6iobJO",
+  "name": "sjkfdfjlj",
+  "lname": "lsljlksdfjsdlf",
+  "gender": "male",
+  "city": "Ratlam",
+  "dob": {
+    "$date": {
+      "$numberLong": "883612800000"
+    }
+  },
+  "image": "photo-1653914854328.jpg",
+  "__v": 0
+}]

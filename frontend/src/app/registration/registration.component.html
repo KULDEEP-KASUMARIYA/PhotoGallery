@@ -1,0 +1,154 @@
+<!-- Main content -->
+<section class="content mt-5">
+    <div class="container-fluid ">
+      <div class="row col-md-12 ">
+        <!-- left column -->
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+          <!-- jquery validation -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title text-info">Registration Panel <small> for User  </small></h3>
+              <!-- {{myForm.invalid |json}} -->
+            </div>
+
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="myForm">
+              <div class="card-body">
+                <span id="error" class="text-danger"></span>
+                <div class="form-group">
+                  <!--  Email -->
+                  <!-- <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" formControlName="email" [ngClass]="(email && email.invalid && email.touched && email.dirty)?'is-invalid':''"
+                   [ngClass]="(email && email.valid && email.dirty)?'is-valid':''" 
+                  class="form-control mb-2" id="email" placeholder="Enter email">           
+                  <span  id="email_error" class="error invalid-feedback">please enter a email address</span> -->
+
+                  <!--  Email -->
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="text" formControlName="email"
+                  [ngClass]="(email && email.invalid && email.touched && email.dirty)?'is-invalid':''" 
+                  [ngClass]="( email && email.valid && email.touched ? 'is-valid':'')"
+                  class="form-control mb-2"  placeholder="Enter email">  
+                    <!-- email error show -->
+                  <small *ngIf="email && email.invalid && email.touched" class="text-danger">Email is required<br></small> 
+                 
+                  
+                   <!--  Password -->
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" formControlName="password" [ngClass]="(password && password.invalid && password.touched && password.dirty)?'is-invalid':'is-valid'" 
+                  [ngClass]="( password && password.valid && password.touched ? 'is-valid':'')"
+                  class="form-control mb-2" id="password" placeholder="Password">
+                  <!-- password error show -->
+                  <small *ngIf="password && password.invalid && password.touched" class="text-danger">Password is required<br></small>
+
+
+                  <!--  Confirm Password -->
+                  <label for="exampleInputPassword1">Confirm Password</label>
+                  <input type="password" formControlName="conf_password"
+                  [ngClass]="(conf_password && conf_password.invalid && conf_password.touched && conf_password.dirty)?'is-invalid':''" 
+                  [ngClass]="( conf_password && conf_password.valid && conf_password.touched ? 'is-valid':'')"
+                  class="form-control mb-2"  placeholder="Password">
+                  <!-- conf password error show -->
+                  <small *ngIf="conf_password && conf_password.invalid && conf_password.touched" class="text-danger">Confirm Password is required<br></small>
+                  <small *ngIf="conf_password && password  &&  (conf_password.value != password.value) && conf_password.touched && password.touched 
+                  && password.valid && conf_password.valid                  
+                  " class="text-danger">Password and Confirm Password not match ! <br></small>
+                  
+
+                  <!--  Name -->
+                  <label for="exampleInputPassword1">Name</label>
+                  <input type="text" formControlName="name" 
+                  [ngClass]="(name && name.invalid && name.touched && name.dirty)?'is-invalid':'is-valid'" 
+                  [ngClass]="( name && name.valid && name.touched ? 'is-valid':'')"
+                  class="form-control mb-2" id="name" placeholder="Name">
+                  <!-- <span id="name_error" class="error invalid-feedback">please enter Name</span> -->
+                  <!-- Name error show -->
+                  <small *ngIf="name && name.invalid && name.touched" class="text-danger">Name is required<br></small>
+
+                   <!-- Last Name -->
+                  <label for="exampleInputPassword1">Last Name</label>
+                  <input type="text" formControlName="lname" 
+                  [ngClass]="(lname && lname.invalid && lname.touched && lname.dirty)?'is-invalid':'is-valid'" 
+                  [ngClass]="( lname && lname.valid && lname.touched ? 'is-valid':'')"
+                  class="form-control mb-2" id="lname" placeholder="Last Name">
+                  <!-- last Name error show -->
+                  <small *ngIf="lname && lname.invalid && lname.touched" class="text-danger">Last Name is required<br></small>
+
+                  <!-- Gender -->
+                  <label for="exampleInputPassword1">Gender</label>
+                  <div class="row">
+                    <label class="md-check">
+                      <input type="radio" value="female" name="gender" formControlName="gender">
+                      Female
+                    </label>
+                    <label class="md-check">
+                      <input type="radio" value="male" name="gender" formControlName="gender">     
+                      Male
+                    </label>                  
+                  </div>
+                  <!-- gender error  show -->
+                  <small *ngIf="gender && (gender.value=='')" class="text-danger">Please Select Gender<br></small>
+                  
+                  <!-- Select City -->
+                  <br/>
+                  <label for="exampleInputPassword1">Select City</label><br>
+                  <select formControlName="city" class="form-control">
+                    <option value="" selected>Select Your City</option>
+                    <option *ngFor="let option of cities" [value]="option">{{option}}</option>
+                  </select>
+                  <!-- Date of Birth error show -->
+                  <small *ngIf="city &&  (city.value=='')" class="text-danger">Please Select City<br></small>
+
+                  <!-- Date Of Birth -->
+                  <br>
+                  <label for="exampleInputPassword1">Date Of Birth</label>
+                  <input type="date" formControlName="dob" 
+                  [ngClass]="(dob && dob.invalid && dob.touched && dob.dirty)?'is-invalid':''" 
+                  [ngClass]="( dob && dob.valid && dob.touched ? 'is-valid':'')"
+                  class="form-control mb-2" id="dob">
+                  <!-- Date of Birth error show -->
+                  <small *ngIf="dob && dob.invalid && dob.touched" class="text-danger">Please Select Date Of Birth<br></small>
+
+                  <!-- Image Upload -->
+                  <label for="exampleInputPassword1">Image Upload</label><br>
+                  <input type="file" (change)="onFileSelected($event)" formControlName="image" 
+                  [ngClass]="(image && image.invalid && image.touched && image.dirty)?'is-invalid':''" 
+                  [ngClass]="( image && image.valid && image.touched ? 'is-valid':'')"
+                  class=" profile_photo form-control mb-2" id="image" accept="image/png, image/gif, image/jpeg">
+                  <!-- Photos error show -->
+                  <small *ngIf="image && image.invalid && image.touched" class="text-danger" >Please select Photo<br></small>
+
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <a type="button" routerLink="/login" class="btn btn-danger mr-5 right">Back</a>
+                <button type="button" (click)="registration_func();" [disabled]="myForm.invalid" class="btn btn-primary ml-5 left" style="margin-left:77px;">Registration</button>
+              </div>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+          </div>
+        <!--/.col (left) -->
+        <!-- right column -->
+        <div class="col-md-3">
+
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+  
+  <!-- <form [formGroup]="myForm">
+  <div class="md-form">
+    <input mdbInput mdbValidate type="email" id="form8" class="form-control" formControlName="email">
+    <label for="form8">Email validator</label>
+    <mdb-error *ngIf="email?.invalid && (email?.dirty || email?.touched)">Input invalid</mdb-error>
+    <mdb-success *ngIf="email?.valid && (email?.dirty || email?.touched)">Input valid</mdb-success>
+  </div>
+</form> -->

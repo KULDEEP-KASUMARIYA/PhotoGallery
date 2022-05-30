@@ -1,0 +1,101 @@
+<app-header></app-header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row col-md-12 text-dark">
+            <div class="col-md-4"><h2>Menu's</h2></div> 
+            <div class="col-md-4"><h2>Add Products here</h2></div>   
+            <div class="col-md-4"></div>     
+        </div>
+        <div class=" row mt-2 col-md-12 col-sm-12">
+            <div class="col-md-4 col-sm-4 ">
+                <table class="table">
+                <tr><th>
+                <a type="button" href="/products" class="btn btn-warning mt-4">Add Products</a><br>
+                <a type="button" class="btn btn-warning mt-3">Display Products</a><br>
+                <a type="button" href="/editDeletePro"class="btn btn-warning mt-3">Edit / Delete Products</a>
+                </th></tr>
+                </table>
+            </div>
+            <div class="col-md-4 col-sm-4 productsArea">
+                <form [formGroup]="categoriesForm" class="form-group" (ngSubmit)="addCategoriesData()">
+                    <!-- category name -->
+                    <div class="">
+                    <label><b>Category Name</b></label>
+                    <select class="form-control mt-1" formControlName="categoryName"
+                    [ngClass]=" isSubmit && categoryName?.errors?'is-invalid':''">
+                        <option value="" selected>Select category</option>
+                        <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+                    </select> 
+                    <span class="invalid-feedback">Please Select Category</span> 
+                    </div>
+
+                    <!-- product name -->
+                    <div class="">
+                    <label class="mt-2"><b>Product Name</b></label>
+                    <input type="text" class="form-control mt-1" formControlName="productName"
+                    [ngClass]=" isSubmit && productName?.errors?'is-invalid':''">
+                    <span class="invalid-feedback">Please Enter Product Name</span>
+                    </div>
+
+                
+                    <div class="row col-md-12 col-sm-12">
+                        <!-- product qty -->
+                        <div class="col-sm-6 col-md-6">
+                            <label class="mt-2"><b>Product Quantity</b></label>
+                            <input type="number" class="form-control mt-1" formControlName="productQty"
+                            [ngClass]=" isSubmit && productQty?.errors?'is-invalid':''"
+                            style="width:160px;">
+                            <span class="invalid-feedback">Please Enter Product Quantity</span>
+                        </div>
+                        <!-- product Price -->
+                        <div class="col-sm-5 col-md-5" style="margin-left: 14px;">
+                            <label class="mt-2 ml-3"><b>Product Price</b></label>
+                            <input type="number" class="form-control mt-1" formControlName="productPrice"
+                            [ngClass]=" isSubmit && productPrice?.errors?'is-invalid':''"
+                            style="width:160px;">
+                            <span class="invalid-feedback">Please Enter Product Price</span>
+                        </div>
+                    </div>
+
+                    <!-- porduct image -->
+                    <div class="">
+                    <label class="mt-2"><b>Product Image</b></label>
+                    <input type="file" class="form-control mt-1" formControlName="productImage"
+                    [ngClass]="isSubmit && (productImage?.errors || fileTypeError)?'is-invalid':''"
+                    (change)="fileUploaded($event);">
+                    <span *ngIf="isSubmit && productImage?.errors" class="invalid-feedback">Please choose any File</span>
+                    <span *ngIf="isSubmit && fileTypeError" class="invalid-feedback">Please Select Only Image</span>
+                    </div> 
+
+                     <!--myErrorShow  -->
+                     <!-- <div>
+                         <pre>
+                            {{productImage}}
+                            {{productImage?.errors}}
+                        </pre>
+                     </div> -->
+
+                    <!-- form buttons -->
+                    <div class="row col-md-12">
+                    <div class="col-md-6">
+                    <input type="reset" value="Reset" (click)="resetForm();" class=" btn btn-danger mt-4 productBtn b1">
+                    </div>
+                    <div class="col-md-6">
+                    <input type="submit" value="Save" class="btn btn-info ml-3 mt-4 b2 text-light">
+                    </div>
+                    </div>
+                  </form>
+            </div>
+            <div class="col-md-4 col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html>

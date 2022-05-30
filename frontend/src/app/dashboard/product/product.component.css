@@ -1,0 +1,38 @@
+.productBtn{
+    margin-right: 30px;
+}
+
+.b1{
+    /* transition: box-shadow .1s; */
+    width: 157px;
+}
+.b1:hover {
+    background-color:	#ff0000;
+    width: 160px;
+    height: 40px;
+    box-shadow: 0px 15px 20px rgba(13, 14, 13, 0.4);
+}
+
+.b2{
+    /* transition: box-shadow .1s; */
+    width: 157px;
+    margin-left: 15px;
+}
+.b2:hover {
+    background-color:rgba(9, 240, 240, 0.979);
+    width: 160px;
+    height: 40px;
+    box-shadow: 0px 15px 20px rgba(13, 14, 13, 0.4); 
+}
+
+body{
+    margin-top: 8%;
+}
+table td th{
+    border: 0px !important;
+}
+
+.cont{
+    margin-left: 2%;
+    margin-right: auto;
+}

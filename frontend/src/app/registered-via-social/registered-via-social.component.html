@@ -1,0 +1,70 @@
+<br><br>
+    <div class="row" *ngIf="isLoggedin == true">
+      <div class="col-md-3"></div>
+      <!-- left column -->
+      <div class="col-md-6">
+        <!-- jquery validation -->
+        <div class="card card-primary ">
+          <div class="card-header">
+            <h3 class="card-title text-info">Welcome {{socialUser.firstName+" "+socialUser.lastName}}</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form id="quickForm" [formGroup]="myForm" (ngSubmit)="registration_func()">
+            <div class="card-body">
+              <div>
+                <div class="form-group">
+                  <label></label><br>
+                 
+                  <img [src]="socialUser.photoUrl" height="100" width="100" readonly>
+                </div>
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" [value]="socialUser.lastName" id="lastname" readonly>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
+                </div>
+
+                <!--  Password -->
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" formControlName="password" [ngClass]="(password && password.invalid && password.touched && password.dirty)?'is-invalid':'is-valid'" 
+                [ngClass]="( password && password.valid && password.touched ? 'is-valid':'')"
+                class="form-control mb-2" id="password" placeholder="Password">
+                <!-- password error show -->
+                <small *ngIf="password && password.invalid && password.touched" class="text-danger">Password is required<br></small>
+                
+                
+                <!--  Confirm Password -->
+                <label for="exampleInputPassword1">Confirm Password</label>
+                <input type="password" formControlName="conf_password"
+                [ngClass]="(conf_password && conf_password.invalid && conf_password.touched && conf_password.dirty)?'is-invalid':''" 
+                [ngClass]="( conf_password && conf_password.valid && conf_password.touched ? 'is-valid':'')"
+                class="form-control mb-2"  placeholder="Password">
+                <!-- conf password error show -->
+                <small *ngIf="conf_password && conf_password.invalid && conf_password.touched" class="text-danger">Confirm Password is required<br></small>
+                <small *ngIf="conf_password && password  &&  (conf_password.value != password.value) && conf_password.touched && password.touched 
+                && password.valid && conf_password.valid ?'myForm=false':''                  
+                " class="text-danger">Password and Confirm Password not match ! <br></small>
+
+
+                <br>
+                <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary">Sign Up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+      <!--/.col (left) -->
+      <!-- right column -->
+      <div class="col-md-6">
+
+      </div>
+      <!--/.col (right) -->
+    </div>

@@ -1,0 +1,132 @@
+<app-header></app-header>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href=''>
+
+</head>
+
+<body>
+    
+    <div class="row usersBody col-sm-12 col-md-12">   
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th scope="col">SrNo.</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Status</th>
+          <th scope="col">Photo</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of usersData let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{ item.name}}</td>
+          <td>{{ item.lname}}</td>
+          <td class="td">{{ item.email}}</td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" (change)="changeStatus(item.status,item._id)" [checked]="item.status == 1" >
+              <span class="slider round"></span>
+            </label>
+          </td>
+          <td> <img src="http://localhost:3001/users/{{item.image}}" style="width: 50px;height:50px">
+          </td>
+          <td>
+            <button class="btn btn-warning" (click)="getEditUser(item._id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteUser(item._id)" style="margin-left:15px ;">Delete</button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+    <!-- {{ userData[0]['email']}} -->
+    </div>
+  
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+        <button type="button" class="btn-close" #closebutton data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="form-group" [formGroup]="userUpdateForm">
+
+          <div class="mb-2">
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="email" readonly>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" 
+            [ngClass]="(name && name.invalid && name.touched && name.dirty)?'is-invalid':'is-valid'">
+            <span class="invalid-feedback">Name is required</span>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control"  formControlName="lname"
+            [ngClass]="(lname && lname.invalid && lname.touched && lname.dirty)?'is-invalid':'is-valid'">
+            <span class="invalid-feedback">Last Name is required</span>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <input type="radio" name="gender"  id="female" value="female" formControlName="gender"
+            [ngClass]="(userUpdateForm.value.gender==null)?'is-invalid':'is-valid'">
+            <label for="female" class="labGender">Female</label>
+            <input type="radio" name="gender" id="male" value="male" formControlName="gender"
+            [ngClass]="(userUpdateForm.value.gender==null)?'is-invalid':'is-valid'">
+            <label for="male" class="labGender">Male</label>
+            <span class="invalid-feedback">Gender is required</span>
+          </div>
+
+          <div class="mb-3">
+            <label>Select City</label>
+            <select class="form-control" formControlName="city"
+            [ngClass]="userUpdateForm.value.city == null || userUpdateForm.value.city ==''?'is-invalid':'is-valid'">
+              <option value="" >select city</option>
+              <option value="Ujjain">Ujjain</option>
+              <option value="Bhopal">Bhopal</option>
+              <option value="Ratlam">Ratlam</option>
+              <option value="Indore">Indore</option>
+              <option value="Jabalpur">Jabalpur</option>
+            </select>
+            <span class="invalid-feedback">Gender is required</span>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Photo / Optional</label>
+            <input type="file" #myInput (change)="imageUpload($event);" class="form-control"  formControlName="photo" [ngClass]="imageTypeError?'is-invalid':''">
+            <span class="invalid-feedback">Please Enter Image Only</span>
+          </div>
+
+
+          <input type="hidden" formControlName="hidden_id">
+          <input type="hidden" formControlName="hidden_image">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="userDataUpdate();" class="btn btn-primary">Update</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "6291f81f9c552c2be06ec117"
+  },
+  "catName": "Laptops",
+  "proName": "HP Core i3 11th Gen - (8 GB/512 GB SSD/Windows 11 Home)",
+  "proQty": 10,
+  "proImage": "productImage-1653903666621.jpg",
+  "__v": 0,
+  "proPrice": 42990
+},{
+  "_id": {
+    "$oid": "6291f8c27551fe1b7456871d"
+  },
+  "catName": "Led's",
+  "proName": "nokia 3310",
+  "proQty": 10,
+  "proImage": "productImage-1653903739345.jpg",
+  "__v": 0,
+  "proPrice": 13990
+},{
+  "_id": {
+    "$oid": "6291f939a2fb831268dc40ad"
+  },
+  "catName": "Mobiles",
+  "proName": "Nokia 6600 Mobile Phone",
+  "proQty": 10,
+  "proImage": "productImage-1653903811431.jpg",
+  "__v": 0,
+  "proPrice": 199
+},{
+  "_id": {
+    "$oid": "6291f9aba2fb831268dc40af"
+  },
+  "catName": "Mobiles",
+  "proName": "Nokia 5130 Refurbished Phone",
+  "proQty": 10,
+  "proImage": "productImage-1653903817153.jpg",
+  "__v": 0,
+  "proPrice": 1799
+},{
+  "_id": {
+    "$oid": "6291fa72a2fb831268dc40b1"
+  },
+  "catName": "Mobiles",
+  "proName": "Nokia 808 PureView ( 16 GB Storage, 512 GB RAM )",
+  "proQty": 100,
+  "proImage": "productImage-1653904227617.jpg",
+  "__v": 0,
+  "proPrice": 41329
+},{
+  "_id": {
+    "$oid": "6291fa87a2fb831268dc40b3"
+  },
+  "catName": "Laptops",
+  "proName": "HP 15- AMD Ryzen 3-3250 15.6 inch(39.6 cm) FHD,Thin & Light Laptop (8 GB RAM/1TB HDD + 256GB SSD/Windows 10/MS Office) 1.82kg (15s-gr0012AU), Silver",
+  "proQty": 15,
+  "proImage": "productImage-1653904024591.jpg",
+  "__v": 0,
+  "proPrice": 41490
+},{
+  "_id": {
+    "$oid": "62920222f7c209151c135618"
+  },
+  "catName": "Mobiles",
+  "proName": " Nokia N8 ( 16 GB Storage, 256 GB RAM )",
+  "proQty": 10,
+  "proPrice": 17652,
+  "proImage": "productImage-1653904113032.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "629202b2f7c209151c13561b"
+  },
+  "catName": "Led's",
+  "proName": "F&D 80 cm (32 inches) HD Ready LED TV T2V Range TLT-3216DT (Black)",
+  "proQty": 10,
+  "proPrice": 16499,
+  "proImage": "productImage-1653736114295.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6294bdd9f3f2c4300c15a10b"
+  },
+  "catName": "Led's",
+  "proName": "sfsdfdsfdsf",
+  "proQty": 1,
+  "proPrice": 1,
+  "proImage": "productImage-1653915097014.jpg",
+  "__v": 0
+}]
